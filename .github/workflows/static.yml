@@ -32,6 +32,7 @@ jobs:
           ref: main
 
       - run: mkdir pdf
+      - run: mv *.pdf pdf/
 
       # directory listing
       - name: Generate Directory Listings
