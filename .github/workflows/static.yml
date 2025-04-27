@@ -31,16 +31,18 @@ jobs:
         with:
           ref: main
 
+      - run: mkdir pdf
+
       # directory listing
       - name: Generate Directory Listings
         uses: jayanta525/github-pages-directory-listing@v4.0.0
         with:
-          FOLDER: / #directory to generate index          
+          FOLDER: pdf #directory to generate index          
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: / # upload generated folder
+          path: pdf # upload generated folder
 
   deploy:
     needs: pages-directory-listing
